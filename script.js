@@ -1,1 +1,4 @@
-// Add JavaScript code for your web site here and call it from index.html.
+/* Add CSS styles for your web site here and use them in index.html. */
+
+
+/* Create background colors */
