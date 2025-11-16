@@ -7,13 +7,13 @@ html, body {
 
 /* Create background colors */
 body {
-    background-color: rgba(85, 108, 140, 0.638);
+    background: #86a38b;
     color: white;
     font-family: sans-serif;
 }
 
 /* Box model on Navigation */
-.navigation{
+.navigation {
     width: auto;
     padding: 10px;
     border: 2px solid;
@@ -22,10 +22,9 @@ body {
 }
 
 /* Box model on Footer */
-.navigation{
+.foot {
     width: auto;
     padding: 10px;
-    border: 2px solid;
     text-align: center;
     box-sizing: border-box;
 }
