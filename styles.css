@@ -1,9 +1,31 @@
 /* Add CSS styles for your web site here and use them in index.html. */
 html, body {
-    height: 100%;
+    height:auto;
     width: 100%;
-    margin: 0;
-    
+    margin: 0;   
 }
 
 /* Create background colors */
+body {
+    background-color: rgba(85, 108, 140, 0.638);
+    color: white;
+    font-family: sans-serif;
+}
+
+/* Box model on Navigation */
+.navigation{
+    width: auto;
+    padding: 10px;
+    border: 2px solid;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+/* Box model on Footer */
+.navigation{
+    width: auto;
+    padding: 10px;
+    border: 2px solid;
+    text-align: center;
+    box-sizing: border-box;
+}
