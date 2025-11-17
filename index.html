@@ -10,33 +10,75 @@
 
 <!-- Add HTML markup elements for your web site below-->
 <body>
-    <!-- Site Header / Logo and Navigation -->
-    <h1 style="background-color:#d2ccf4; font-size: 48px;"> Tanesha's Market Madness </h1>
+    <!-- Navigation Bar -->
+    <section class="nav"> 
         <div class="navigation"> 
             <nav>
                 <a href="#about">About</a>
-                <a href="#data">Live Data</a>
+                <a href="#livedata">Live Data</a>
                 <a href="#event">Events</a>
-                <a href="#reflections">Reflections </a>
+                <a href="#reflection">Reflections</a>
+                <a href="#resources">Resources</a>
             </nav>
         </div>
+    </section>
 
-    <!-- About Us Section -->
-    <section id="aboutUs">
-        <h2> About Us </h2>
-            <p style="">
-                Tanesha's Market Madness is a digital space where finance meets technology.
-                It's a hub for exploring markets, data, and innovation in real time.
-                Whether you're a student, analyst, or a curious observer,
-                our goal is spark curiosity and clarity about how money moves and why it 
-                matter through the evolving relationship between finance, tech, and human behavior.
-            </p>
+    <!-- Header / logo -->
+    <section id="about" class="header"> 
+        <div class="header"> 
+            <h1>Tanesha's Market Madness</h1>
+        </div>
+    </section>
+    
+    <!-- About Us Section & Upcoming Events -->
+    <section class="split-section">
+        <div class="logo"> 
+            <img 
+                src="img/logo.png"
+                alt="Tanesha's Market Madness Logo"
+                width="300"
+            > 
+        </div>
+        <div class="left-section"> 
+            <h2> About Us </h2>
+                <p>
+                    Tanesha's Market Madness is a digital space where finance meets technology for 
+                    people who enjoy exploring numbers and movements. It's a hub for exploring markets, 
+                    data, and innovation in real time. We blend real-time market energy with clear 
+                    analysis-part simulation, part data experiment, part think-piece collection. So, 
+                    whether you're a student, analyst, or a curious observer, our goal is spark curiosity 
+                    and clarity about how money moves and why it matter through the evolving relationship 
+                    between finance, tech, and human behavior.
+                </p>
+        </div>
+
+        <div class="right-section">
+            <h2> Upcoming Events </h2>
+                <ul>
+                    <li> Dec 1 - LIVE: Aura Capital Fund Live Discussion</li>
+                    <li> Dec 7 - Deep Dive: Chasing Alpha  </li>
+                    <li> Dec 14 - CASE STUDY: Using AI for Good </li>
+                    <li> Dec 21 - LIVE: Christmas Week Live </li>
+                    <li> Dec 28 - LIVE: Financial Literacy </li>
+                </ul>
+        </div>
     </section>
 
     <!-- Live Data -->
-    <section id="liveData">
+    <section id="livedata">
         <h2> Live Market Data </h2>
             <p> (Coming Soon: A LIVE SHOCK TICKER OR DATA VISUALIZATION FEATURE!) </p>
+
+        <!-- Playable Video Here -->
+            <iframe 
+                width="460" height="315" 
+                src="https://www.youtube.com/embed/KQp-e_XQnDE?si=dQjoq7o4ZVfbnvf8" 
+                title="YouTube video player" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                referrerpolicy="strict-origin-when-cross-origin" 
+                allowfullscreen>
+            </iframe>
     </section>
 
     <!-- Event 
@@ -44,26 +86,29 @@
      - List of whats to come
      - A RSVP / ALERT for when LIVE
     -->
-    <section id="event">
-        <h2> Upcoming Events </h2>
+    <section id="event" class="event-section00">
+        <div class="event-section01">
+            <h2> Upcoming Event: {Dec 1} </h2>
+                <!-- pic for Aura Capital --> 
+                    <img 
+                        src="img/AuraCapital.png"
+                        alt="Aura Capital Logo"
+                        width="300"
+                    >   
+        </div>
+        <div class="event-section01">
             <h3> The Aura Capital Fund Live Discussion </h3>
-    
-            <!-- Introduce Aura Capital Fund -->
-            <p>
-                Join us for an exclusive sit-down with Aura Capital Fund’s CEO Jeanmark Ceant,
-                as we unpack their mission, strategy, and the values driving their next big
-                move — going public on the stock exchange. Aura Capital Fund is a pioneering
-                mutual fund built on ESG principles, focusing on companies that are not only
-                profitable, but ethical, community-driven, and sustainable. Their portfolio
-                centers on Black-owned and Black-led businesses, investing in innovation,
-                equity, and long-term value creation.
-            </p>
-
-        <!-- need to make a pic for Aura Capital --> <!--(AND Sign up Link should be on the same line as this)-->
-        <img src="img/AuraCapital.png"
-             alt="Aura Capital Logo"
-            width="300"
-        >   
+                <!-- Introduce Aura Capital Fund -->
+                <p>
+                    Join us for an exclusive sit-down with Aura Capital Fund’s CEO Jeanmark Ceant,
+                    as we unpack their mission, strategy, and the values driving their next big
+                    move — going public on the stock exchange. Aura Capital Fund is a pioneering
+                    mutual fund built on ESG principles, focusing on companies that are not only
+                    profitable, but ethical, community-driven, and sustainable. Their portfolio
+                    centers on Black-owned and Black-led businesses, investing in innovation,
+                    equity, and long-term value creation.
+                </p>
+        </div>
     </section>
 
     <!-- RSVP & Sign Up -->
@@ -91,27 +136,14 @@
         />
     </picture>
 
-    <!-- Playable Video Here -->
-    <iframe 
-        width="460" height="315" 
-        src="https://www.youtube.com/embed/KQp-e_XQnDE?si=dQjoq7o4ZVfbnvf8" 
-        title="YouTube video player" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-        referrerpolicy="strict-origin-when-cross-origin" 
-        allowfullscreen>
-    </iframe>
     </section>
 
     <!-- Currently Featured -->
-    <section id="currentlyFeatured">
     <h2> Currently Featured </h2>
          <p> Coming Soon:  </p>
-    
-    </section>
 
     <!-- Reflection -->
-    <section id="currentlyFeatured">
+    <section id="reflection">
     <h2> Reflections </h2>
          <p> Coming Soon:  </p>
     </section>
@@ -138,8 +170,9 @@
     <!-- FOOTER -->
     <div class="footer"> 
         <footer>
-            <p>© 2025 Tanesha's Market Madness | Built for CodePath WEB101 | 
-                <a href="#email"> Email our Team </a>  
+            <p>© 2025 Tanesha's Market Madness | 
+                <a href="#email"> Email our Team</a>  
+                | Built for CodePath WEB101 | NOT INVESTMENT ADVICE
             </p>
         </footer>
     </div> 

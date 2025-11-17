@@ -1,175 +1,237 @@
 /* Add CSS styles for your web site here and use them in index.html. */
-html, body {
-    height:auto;
-     width: auto;
-     margin: 0;  
- }
- 
- /* Create background colors */
- body {
-   background-color: var(--bg-color);
-     /*background: rgb(85, 108, 140, 0.638); */
-     color: white;
-     font-size: 16px;
-     margin: 50px;
-     color: var(--text-color);
-     font-family: Tahoma, sans-serif; 
- }
- 
- /* Box model on Navigation */
- .navigation {
-     width: auto;
-     padding: 10px;
-     border: 2px solid;
-     text-align: center;
-     box-sizing: border-box;
- }
- 
- /* Box model on Footer */
- .footer {
-     padding: 10px;
-     background-color:#d2ccf4;
-     text-align: left;
-     box-sizing: border-box;
-     position: fixed;
-     left: 0;
-     bottom: 0;
-     width:100%;
- }
- 
- /* Updating Header 1 */
- h1 {
-     text-align: center;
-     
- }
- 
- /* Updating Header 2 */
- h2 {
-     
- }
- 
- /* Updating Header 3 */
- h3 {
-     
- }
- 
- /* Updating Header 3 */
- h4 {
-     
- }
- 
- 
- p {
-     
- }
- 
- a,
- a * {
-     
- }
- 
- button {
-     background-color: rgb(0, 19, 128);    
-     color: white;               
-     border: none;               
-     padding: 5px 12px;         
-     border-radius: 5px;        
-     cursor: pointer;           
- }
- 
- button:hover {
-     /* Make the button look different when the user hovers over it */
- }
- 
- /*** header ***
-   
-   Purpose:
-   - Add style rules for your website's header section
- 
-   When To Modify:
-   - [X] Project 3 (REQUIRED FEATURE) 
-   - [ ] Project 4 (REQUIRED FEATURE) 
-   - [ ] Any time after
- ***/
- 
- .header { /* Example A: This styles elements with class="header" */
-     
- }
- 
- 
- 
- 
- /*** About Section ***
-   
-   Purpose:
-   - Add style rules for your website's About section
- 
-   When To Modify:
-   - [ ] Project 3 (OPTIONAL)
-   - [ ] Project 4 (STRETCH FEATURE) 
-   - [ ] Any time after
- ***/
- 
- 
- /*** Schedule Section ***
-   
-   Purpose:
-   - Add style rules for your website's Schedule section
- 
-   When To Modify:
-   - [ ] Project 3 (OPTIONAL)
-   - [ ] Project 4 (STRETCH FEATURE) 
-   - [ ] Any time after
- ***/
- 
- 
- /*** Links Section ***
-   
-   Purpose:
-   - Add style rules for your website's Links section
- 
-   When To Modify:
-   - [ ] Project 3 (OPTIONAL)
-   - [ ] Project 4 (STRETCH FEATURE) 
-   - [ ] Any time after
- ***/
- 
- 
- /*** RSVP [PLACEHOLDER] [ADDED IN UNIT 6] ***/
- /*** Animations [PLACEHOLDER] [ADDED IN UNIT 8] ***/
- /*** Success Modal [PLACEHOLDER] [ADDED IN UNIT 9] ***/
- /*** Dark Mode [PLACEHOLDER] [ADDED IN UNIT 5] ***/
- 
- /*** Custom Colors (OPTIONAL) ***
-   
-   Purpose:
-   - Use CSS variables to define custom colors for your website
-   - To get you started, we've provided the color scheme used in our example site.
-   - To reference a color variable in your css, use var(--variable-name) in place of a color value
- 
-   When To Modify:
-   - [ ] Any time (OPTIONAL)
- ***/
- 
- :root {
-     /* Light Mode */
-     --bg-color: #a6a0cf;
-     --text-color: #231942;
- 
-     /* Dark Mode */
-     --bg-color-dark-mode: #3e3377;
-     --text-color-dark-mode: #fff;
- 
-     /* Accent Colors */
-     --accent-color-light: #d2cff5;
-     --accent-color-medium: #684fb5;
-     --accent-color-dark: #482f95;
-     --accent-color-darkest: #231942;
-     --accent-color-green: #28eb76;
- 
-     /* Error Colors */
-     --error-color: #f8bbd0;
-     --error-color-border: #e63946;
- }
- 
- 
+:root {
+    /* Light Mode */
+    --bg-color: #112D28;
+    --secondarybg-color: #12382F;
+    --text-color: #ffffff;
+    --accent: #8a7dff;
+
+    /* Dark Mode */
+    --bg-color-dark-mode: #3e3377; 
+    --text-color-dark-mode: #fff;
+
+    /* Accent Colors */
+    --accent-color-light: #d2cff5;
+    --accent-color-medium: #684fb5;
+    --accent-color-dark: #482f95;
+    --accent-color-darkest: #231942;
+    --accent-color-green: #28eb76;
+
+    /* Error Colors */
+    --error-color: #f8bbd0;
+    --error-color-border: #e63946;
+}
+
+/* Creating dim for HTML */
+html {
+  height: auto;
+  width: auto;
+}
+
+/* Navigation Bar */
+.nav {
+  margin: 0;
+  padding: 0;
+}
+
+/* Responsive Navigation Bar using Flexbox */
+.navigation {
+  position: fixed;
+  top: 0;
+  left: 0;                    
+  width: 100%;
+  background-color: var(--secondarybg-color);
+  box-sizing: border-box;
+  z-index: 1000;
+
+  display: flex;               
+  justify-content: flex-start; 
+  align-items: center;
+  padding: 10px 20px;
+}
+
+/* Create site background colors */
+body {
+  background-color: var(--bg-color);
+  color: white;
+  font-size: 16px;
+  margin: 50px;
+  color: var(--text-color);
+  font-family: Tahoma, sans-serif; 
+}
+
+/* Updating h1- style */
+h1 {
+  font-family: Tahoma;
+  text-align: center;  
+}
+
+h2 {
+  text-align:start;
+  color: rgb(255, 231, 93);
+}
+
+h3 {
+  color:#28eb76;
+  text-align:center;
+}
+
+p {
+  font-size: 20px;
+  color: var(--text-color)
+}
+
+/* Creating a vertical split for Logo, About Us, and Upcoming Events */
+.split-section {
+  display: flex;
+  gap: 30px;                    
+  margin: 40px auto;
+  max-width: 3000px;            
+  padding: 0 20px;
+}
+
+.left-section, .right-section {
+  flex: 1;                     
+}
+
+.split-section h2 {
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+.split-section ul {
+  list-style:disc;
+  list-style-position: outside;
+  font-size: 20px;
+  margin: 0;
+}
+
+/* add background panels */
+.left-section, .right-section {
+  background: var(--secondarybg-color);
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+/* Creating a vertical split for Upcoming Event: {Dec 1} */
+.event-section00 {
+  display: flex;
+  gap: 30px;
+  margin: 40px auto;
+  max-width: 3000px;
+  padding: 0 20px;
+}
+
+.event-section01 {
+  flex: 1;
+}
+
+
+
+
+
+
+
+
+
+
+/* Box model on Footer */
+.footer {
+    padding: 0px;
+    background-color: var(--secondarybg-color);
+    text-align: left;
+    box-sizing: border-box;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width:100%;
+}
+
+
+
+a,
+a * {
+    
+}
+
+button {
+    background-color: #0b0f14;    
+    color: white;               
+    border: none;               
+    padding: 5px 12px;         
+    border-radius: 5px;        
+    cursor: pointer;           
+}
+
+button:hover {
+    /* Make the button look different when the user hovers over it */
+}
+
+/*** header ***
+  
+  Purpose:
+  - Add style rules for your website's header section
+
+  When To Modify:
+  - [X] Project 3 (REQUIRED FEATURE) 
+  - [ ] Project 4 (REQUIRED FEATURE) 
+  - [ ] Any time after
+***/
+
+
+
+
+
+/*** About Section ***
+  
+  Purpose:
+  - Add style rules for your website's About section
+
+  When To Modify:
+  - [ ] Project 3 (OPTIONAL)
+  - [ ] Project 4 (STRETCH FEATURE) 
+  - [ ] Any time after
+***/
+
+
+/*** Schedule Section ***
+  
+  Purpose:
+  - Add style rules for your website's Schedule section
+
+  When To Modify:
+  - [ ] Project 3 (OPTIONAL)
+  - [ ] Project 4 (STRETCH FEATURE) 
+  - [ ] Any time after
+***/
+
+
+/*** Links Section ***
+  
+  Purpose:
+  - Add style rules for your website's Links section
+
+  When To Modify:
+  - [ ] Project 3 (OPTIONAL)
+  - [ ] Project 4 (STRETCH FEATURE) 
+  - [ ] Any time after
+***/
+
+
+/*** RSVP [PLACEHOLDER] [ADDED IN UNIT 6] ***/
+/*** Animations [PLACEHOLDER] [ADDED IN UNIT 8] ***/
+/*** Success Modal [PLACEHOLDER] [ADDED IN UNIT 9] ***/
+/*** Dark Mode [PLACEHOLDER] [ADDED IN UNIT 5] ***/
+
+/*** Custom Colors (OPTIONAL) ***
+  
+  Purpose:
+  - Use CSS variables to define custom colors for your website
+  - To get you started, we've provided the color scheme used in our example site.
+  - To reference a color variable in your css, use var(--variable-name) in place of a color value
+
+  When To Modify:
+  - [ ] Any time (OPTIONAL)
+***/
+
