@@ -40,8 +40,9 @@
             > 
         </div>
         <div class="left-section"> 
-            <h2> About Us </h2>
+            <h2>  About Us </h2>
                 <p>
+                    <br>
                     Tanesha's Market Madness is a digital space where finance meets technology for 
                     people who enjoy exploring numbers and movements. It's a hub for exploring markets, 
                     data, and innovation in real time. We blend real-time market energy with clear 
@@ -56,6 +57,7 @@
             <h2> Upcoming Events </h2>
                 <ul>
                     <li> Dec 1 - LIVE: Aura Capital Fund Live Discussion</li>
+                    <li> Dec 3 - CASE STUDY: Trump and Tariffs </li>
                     <li> Dec 7 - Deep Dive: Chasing Alpha  </li>
                     <li> Dec 14 - CASE STUDY: Using AI for Good </li>
                     <li> Dec 21 - LIVE: Christmas Week Live </li>
@@ -65,83 +67,106 @@
     </section>
 
     <!-- Live Data -->
-    <section id="livedata">
-        <h2> Live Market Data </h2>
-            <p> (Coming Soon: A LIVE SHOCK TICKER OR DATA VISUALIZATION FEATURE!) </p>
+        <section id="livedata">
+            <h2> Live Market Data </h2>
+                <!-- MOVING STOCK TICKER -->
+                    <div class="ticker">
+                        <div class="ticker-inner" id="ticker-inner">
+                        Loading market data...
+                        </div>
+                    </div>
 
-        <!-- Playable Video Here -->
-            <iframe 
-                width="460" height="315" 
-                src="https://www.youtube.com/embed/KQp-e_XQnDE?si=dQjoq7o4ZVfbnvf8" 
-                title="YouTube video player" 
-                frameborder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                referrerpolicy="strict-origin-when-cross-origin" 
-                allowfullscreen>
-            </iframe>
-    </section>
+                <!-- MARKET SNAPSHOT GRID -->
+                    <h3>Market Snapshot</h3>
+                        <div class="snapshot-grid" id="snapshot-grid">
+                            <!-- JS will create the grids -->
+                    </div>
+
+            <!-- Playable Video Here -->
+                <iframe 
+                    width="460" height="315" 
+                    src="https://www.youtube.com/embed/KQp-e_XQnDE?si=dQjoq7o4ZVfbnvf8" 
+                    title="YouTube video player" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; 
+                        picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" 
+                    allowfullscreen>
+                </iframe>
+        </section>
 
     <!-- Event -->
         <section id="event" class="event-section">
             <h2>Upcoming Event: {Dec 1}</h2>
                 <div class="event-layout">
-                    <!-- LEFT: Aura logo + CEO photo -->
-                        <div class="event-col event-left">
-                            <img 
-                                src="img/AuraCapital.png"
-                                alt="Aura Capital Logo"
-                                class="event-logo"
-                            >
-                            <img 
-                                src="img/CEOAuraCapital.jpeg" 
-                                alt="Aura Capital CEO shaking hands outside the stock exchange"
-                                class="event-ceo"
-                            >
+
+            <!-- LEFT: Aura logo + CEO photo, no boxes -->
+                <div class="event-left">
+                    <img 
+                        src="img/AuraCapital.png"
+                        alt="Aura Capital Logo"
+                        class="event-logo"
+                    >
+                    <img 
+                        src="img/CEOAuraCapital.jpeg" 
+                        alt="Aura Capital CEO shaking hands outside the stock exchange"
+                        class="event-ceo"
+                    >
+                    </div>
+
+            <!-- MIDDLE: two separate boxes -->
+                <div class="event-middle">
+                    <!-- Box 1: Intro -->
+                        <div class="event-box">
+                            <h3>The Aura Capital Fund Live Discussion</h3>
+                                <p>
+                                    Join us for an exclusive sit-down with Aura Capital Fund’s CEO Jeanmark Ceant,
+                                    as we unpack their mission, strategy, and the values driving their next big
+                                    move — going public on the stock exchange. Aura Capital Fund is a pioneering
+                                    mutual fund built on ESG principles, focusing on companies that are not only
+                                    profitable, but ethical, community-driven, and sustainable. Their portfolio
+                                    centers on Black-owned and Black-led businesses, investing in innovation,
+                                    equity, and long-term value creation.
+                                </p>
+                        </div>
+
+                    <!-- Box 2: What to Expect -->
+                        <div class="event-box">
+                            <h4>What to Expect from the Live Show</h4>
+                                <ul>
+                                    <li>A deep dive into Aura Capital Fund’s origin story and their path toward IPO readiness.</li>
+                                    <li>Discussion on how ESG investing can shape more inclusive markets and drive sustainable growth.</li>
+                                    <li>A breakdown of Aura’s portfolio composition and their investment strategy.</li>
+                                    <li>Insights from the CEO on supporting Black entrepreneurship and generational wealth creation.</li>
+                                    <li>A Q&amp;A session exploring IPO and what it could mean for ethical investors and the future of socially conscious finance.</li>
+                                </ul>
+                        </div>
                 </div>
 
-            <!-- MIDDLE: Intro + What to Expect -->
-                <div class="event-col event-middle">
-                    <h3>The Aura Capital Fund Live Discussion</h3>
-                        <p>
-                            Join us for an exclusive sit-down with Aura Capital Fund’s CEO Jeanmark Ceant,
-                            as we unpack their mission, strategy, and the values driving their next big
-                            move — going public on the stock exchange. Aura Capital Fund is a pioneering
-                            mutual fund built on ESG principles, focusing on companies that are not only
-                            profitable, but ethical, community-driven, and sustainable. Their portfolio
-                            centers on Black-owned and Black-led businesses, investing in innovation,
-                            equity, and long-term value creation.
-                        </p>
-
-                    <h4>What to Expect from the Live Show</h4>
-                        <ul>
-                            <li>A deep dive into Aura Capital Fund’s origin story and their path toward IPO readiness.</li>
-                            <li>Discussion on how ESG investing can shape more inclusive markets and drive sustainable growth.</li>
-                            <li>A breakdown of Aura’s portfolio composition and their investment strategy.</li>
-                            <li>Insights from the CEO on supporting Black entrepreneurship and generational wealth creation.</li>
-                            <li>A Q&amp;A session exploring IPO and what it could mean for ethical investors and the future of socially conscious finance.</li>
-                        </ul>
-                </div>
-
-            <!-- RIGHT: Countdown + RSVP buttons -->
-                <div class="event-col event-right">
+            <!-- RIGHT: Countdown box + separate RSVP box -->
+                <div class="event-right">
                     <div class="countdown-box">
                         <h4>Countdown to Aura Capital Announcement</h4>
-                        <p>Countdown clock coming soon…</p>
+                        <p>Countdown clock coming soon...</p>
                     </div>
 
-                    <div class="event-buttons">
-                        <h4> RSVP Here</h4>
-                        <button>Sign Up</button>
-                        <button>More Market Madness</button>
-                    </div>
+                <div class="rsvp-box">
+                    <h4>RSVP Here!</h4>
+                        <div class="event-buttons">
+                            <button>Sign Up</button>
+                            <button>More Market Madness</button>
+                        </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
 
     <!-- Currently Featured -->
-    <h2> Currently Featured </h2>
-         <p> Coming Soon:  </p>
+    <section id="current-feature">
+        <h2> Currently Featured </h2>
+            <p> Coming Soon:  </p>
+    </section>
 
     <!-- Reflection -->
     <section id="reflection">
