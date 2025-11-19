@@ -72,28 +72,40 @@
                 <!-- MOVING STOCK TICKER -->
                     <div class="ticker">
                         <div class="ticker-inner" id="ticker-inner">
-                        Loading market data...
+                            Loading market data...
                         </div>
                     </div>
 
-                <!-- MARKET SNAPSHOT GRID -->
-                    <h3>Market Snapshot</h3>
-                        <div class="snapshot-grid" id="snapshot-grid">
-                            <!-- JS will create the grids -->
+                <!-- Titles row: side-by-side -->
+                    <div class="snapshot-header-row">
+                        <h3>Market Snapshot</h3>
+                        <h3>Yahoo Finance LIVE</h3>
                     </div>
 
-            <!-- Playable Video Here -->
-                <iframe 
-                    width="460" height="315" 
-                    src="https://www.youtube.com/embed/KQp-e_XQnDE?si=dQjoq7o4ZVfbnvf8" 
-                    title="YouTube video player" 
-                    frameborder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; 
-                        picture-in-picture; web-share" 
-                    referrerpolicy="strict-origin-when-cross-origin" 
-                    allowfullscreen>
-                </iframe>
-        </section>
+                    <!-- WRAPPER FOR SNAPSHOT + VIDEO -->
+                        <div class="snapshot-section">
+                            <!-- LEFT: Snapshot -->
+                            <div class="snapshot-left">
+                                <div class="snapshot-grid" id="snapshot-grid">
+                                    <!-- Cards created by JS -->
+                                </div>
+                            </div>
+
+                <!-- RIGHT: Embedded video -->
+                    <div class="snapshot-right">
+                        <div class="video-wrapper">
+                            <iframe
+                                src="https://www.youtube.com/embed/KQp-e_XQnDE?si=dQjoq7o4ZVfbnvf8"
+                                title="YouTube video player"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
     <!-- Event -->
         <section id="event" class="event-section">
