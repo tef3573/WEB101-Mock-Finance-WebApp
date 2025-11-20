@@ -19,6 +19,7 @@
                 <a href="#event">Events</a>
                 <a href="#reflection">Reflections</a>
                 <a href="#resources">Resources</a>
+                <button id="theme-toggle" class="theme-toggle">Light Mode</button>
             </nav>
         </div>
     </section>
@@ -78,8 +79,12 @@
 
                 <!-- Titles row: side-by-side -->
                     <div class="snapshot-header-row">
-                        <h3>Market Snapshot</h3>
-                        <h3>Yahoo Finance LIVE</h3>
+                        <div class="snapshot-header-left">
+                            <h3>Market Snapshot</h3>
+                        </div>
+                        <div class="snapshot-header-right">
+                            <h3>Yahoo Finance LIVE</h3>
+                        </div>
                     </div>
 
                     <!-- WRAPPER FOR SNAPSHOT + VIDEO -->
@@ -107,103 +112,190 @@
                 </div>
             </section>
 
-    <!-- Event -->
-        <section id="event" class="event-section">
-            <h2>Upcoming Event: {Dec 1}</h2>
-                <div class="event-layout">
+        <!-- Event -->
+    <section id="event" class="event-section">
+        <h2>Upcoming Event: {Dec 1}</h2>
 
-            <!-- LEFT: Aura logo + CEO photo, no boxes -->
-                <div class="event-left">
-                    <img 
-                        src="img/AuraCapital.png"
-                        alt="Aura Capital Logo"
-                        class="event-logo"
-                    >
-                    <img 
-                        src="img/CEOAuraCapital.jpeg" 
-                        alt="Aura Capital CEO shaking hands outside the stock exchange"
-                        class="event-ceo"
-                    >
-                    </div>
+        <!-- FIRST ROW: Logo + Intro -->
+        <div class="event-top-row">
+            <div class="event-logo-box">
+                <img 
+                    src="img/AuraCapital.png"
+                    alt="Aura Capital Logo"
+                    class="event-logo"
+                >
+            </div>
 
-            <!-- MIDDLE: two separate boxes -->
-                <div class="event-middle">
-                    <!-- Box 1: Intro -->
-                        <div class="event-box">
-                            <h3>The Aura Capital Fund Live Discussion</h3>
-                                <p>
-                                    Join us for an exclusive sit-down with Aura Capital Fund’s CEO Jeanmark Ceant,
-                                    as we unpack their mission, strategy, and the values driving their next big
-                                    move — going public on the stock exchange. Aura Capital Fund is a pioneering
-                                    mutual fund built on ESG principles, focusing on companies that are not only
-                                    profitable, but ethical, community-driven, and sustainable. Their portfolio
-                                    centers on Black-owned and Black-led businesses, investing in innovation,
-                                    equity, and long-term value creation.
-                                </p>
-                        </div>
+            <div class="event-intro-box">
+                <h3>The Aura Capital Fund Live Discussion</h3>
+                <p>
+                    Join us for an exclusive sit-down with Aura Capital Fund’s CEO Jeanmark Ceant,
+                    as we unpack their mission, strategy, and the values driving their next big
+                    move — going public on the stock exchange. Aura Capital Fund is a pioneering
+                    mutual fund built on ESG principles, focusing on companies that are not only
+                    profitable, but ethical, community-driven, and sustainable. Their portfolio
+                    centers on Black-owned and Black-led businesses, investing in innovation,
+                    equity, and long-term value creation.
+                </p>
+            </div>
+        </div>
 
-                    <!-- Box 2: What to Expect -->
-                        <div class="event-box">
-                            <h4>What to Expect from the Live Show</h4>
-                                <ul>
-                                    <li>A deep dive into Aura Capital Fund’s origin story and their path toward IPO readiness.</li>
-                                    <li>Discussion on how ESG investing can shape more inclusive markets and drive sustainable growth.</li>
-                                    <li>A breakdown of Aura’s portfolio composition and their investment strategy.</li>
-                                    <li>Insights from the CEO on supporting Black entrepreneurship and generational wealth creation.</li>
-                                    <li>A Q&amp;A session exploring IPO and what it could mean for ethical investors and the future of socially conscious finance.</li>
-                                </ul>
-                        </div>
-                </div>
-
-            <!-- RIGHT: Countdown box + separate RSVP box -->
-                <div class="event-right">
-                    <div class="countdown-box">
-                        <h4>Countdown to Aura Capital Announcement</h4>
-                        <p>Countdown clock coming soon...</p>
-                    </div>
-
-                <div class="rsvp-box">
-                    <h4>RSVP Here!</h4>
-                        <div class="event-buttons">
-                            <button>Sign Up</button>
-                            <button>More Market Madness</button>
-                        </div>
+        <!-- SECOND ROW: Countdown + What to Expect side by side -->
+        <div class="event-bottom-row">
+            <!-- LEFT: Countdown box -->
+            <div class="countdown-box">
+                <h4>Countdown to Aura Capital Announcement</h4>
+                <div id="countdown-timer" class="countdown-timer">
+                    <span><strong id="days"></strong><small>Days</small></span>
+                    <span><strong id="hours"></strong><small>Hours</small></span>
+                    <span><strong id="minutes"></strong><small>Minutes</small></span>
+                    <span><strong id="seconds"></strong><small>Seconds</small></span>
                 </div>
             </div>
+
+            <!-- RIGHT: What to Expect -->
+            <div class="expect-box">
+                <h4>What to Expect from the Live Show</h4>
+                <ul>
+                    <li>A deep dive into Aura Capital Fund’s origin story and their path toward IPO readiness.</li>
+                    <li>Discussion on how ESG investing can shape more inclusive markets and drive sustainable growth.</li>
+                    <li>A breakdown of Aura’s portfolio composition and their investment strategy.</li>
+                    <li>Insights from the CEO on supporting Black entrepreneurship and generational wealth creation.</li>
+                    <li>A Q&amp;A session exploring IPO and what it could mean for ethical investors and the future of socially conscious finance.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- THIRD ROW: RSVP (directly under countdown row) -->
+        <section id="rsvp" class="event-rsvp-section">
+            <div class="rsvp-left">
+            <h3>RSVP for Aura Capital Fund Live</h3>
+            <p>
+                Secure your spot for the Aura Capital Fund Live Discussion. Share your details below 
+                to receive reminders, stream access, and follow-up resources from the event.
+            </p>
+
+            <form id="rsvp-form" novalidate>
+                <!-- Name -->
+                <div class="form-row">
+                <label for="rsvp-name">Full Name*</label>
+                <input type="text" id="rsvp-name" name="name" placeholder="John Doe" required>
+                <small class="error-message"></small>
+                </div>
+
+                <!-- Email -->
+                <div class="form-row">
+                <label for="rsvp-email">Email Address*</label>
+                <input type="email" id="rsvp-email" name="email" placeholder="you@example.com" required>
+                <small class="error-message"></small>
+                </div>
+
+                <!-- Role -->
+                <div class="form-row">
+                <label for="rsvp-role">Affiliation / Role*</label>
+                <input type="text" id="rsvp-role" name="role" placeholder="Student, Analyst, Founder..." required>
+                <small class="error-message"></small>
+                </div>
+
+                <!-- Notes -->
+                <div class="form-row">
+                <label for="rsvp-notes">What are you most excited to learn?</label>
+                <textarea id="rsvp-notes" name="notes" rows="3" placeholder="Optional"></textarea>
+                <small class="error-message"></small>
+                </div>
+
+                <button type="submit" class="rsvp-submit-btn">Submit RSVP</button>
+            </form>
+            </div>
+
+            <div class="rsvp-right">
+            <h3>Confirmed RSVPs (<span id="rsvp-count">0</span>)</h3>
+            <ul id="rsvp-list" class="rsvp-list">
+                <li class="rsvp-empty">
+                No RSVPs yet. Be the first to join the market madness.
+                </li>
+            </ul>
+            </div>
+        </section>
+    </section>
+
+
+<!-- FEATURE + REFLECTION SPLIT WRAPPER -->
+<section class="feature-reflect-wrapper">
+
+    <!-- LEFT: Currently Featured -->
+    <section id="featured" class="featured-section">
+        <h2>Currently Featured</h2>
+        <p>Spotlight sessions worth watching again — key clips from Market Madness LIVE.</p>
+
+        <div class="featured-card">
+            <h3>IPO Watch: Aura Capital Fund</h3>
+            <p>ESG meets growth: a closer look at Aura Capital’s push toward the public markets, portfolio positioning, and risk themes to watch.</p>
+            <a href="#">View feature →</a>
         </div>
     </section>
 
+    <!-- RIGHT: Reflections -->
+    <section id="reflections" class="reflections-section">
+        <h2>Reflections</h2>
+        <p>Numbers first, narratives next. Explore other takes and brief analyses.</p>
 
-    <!-- Currently Featured -->
-    <section id="current-feature">
-        <h2> Currently Featured </h2>
-            <p> Coming Soon:  </p>
+        <div class="reflection-card">
+            <h3>Concept Deep Dive</h3>
+            <p>Event-driven returns: modeling post-announcement drift and volatility clustering.</p>
+            <a href="#">Open note →</a>
+        </div>
+
+        <div class="reflection-card">
+            <h3>Cultural & Historical</h3>
+            <p>Speculation, sentiment, and the theater of markets: why the crowd shows up for “the drop.”</p>
+            <a href="#">Read reflection →</a>
+        </div>
+
+        <div class="reflection-card">
+            <h3>Financial Theory & Policy</h3>
+            <p>Information arrival and price discovery: microstructure lessons from scheduled announcements.</p>
+            <a href="#">View brief →</a>
+        </div>
     </section>
 
-    <!-- Reflection -->
-    <section id="reflection">
-    <h2> Reflections </h2>
-         <p> Coming Soon:  </p>
-    </section>
+</section>
 
-    <!-- Resources -->
-    <section id="resources">
-    <h2> Resources </h2>
-        <p> 
-            <a 
-                href="https://www.investopedia.com/terms/e/environmental-social-and-governance-esg-criteria.asp"
-                target="_blank"> 
-                Learn about ESG (Environmental, Social, and Governance) ~ Investopedia
-            </a>
-        </p> 
-        <p> 
-            <a 
-                href="https://www.investor.gov/introduction-investing/investing-basics/glossary/environmental-social-and-governance-esg-investing"
-                target="_blank">
-                U.S.A standards around ESG investing ~ (Investor.gov)
-            </a>
-        </p>
-    </section>
+
+<section id="resources" class="resources-section">
+    <h2>Resources</h2>
+    <p>Tools, data sources, and learning libraries used across Market Madness content.</p>
+
+    <div class="resources-grid">
+
+        <a class="resource-box" href="https://www.investopedia.com/" target="_blank">
+            <h4>Investopedia</h4>
+            <p>Definitions, financial education, investment concepts.</p>
+        </a>
+
+        <a class="resource-box" href="https://fred.stlouisfed.org/" target="_blank">
+            <h4>FRED</h4>
+            <p>Federal Reserve data for macroeconomics and markets.</p>
+        </a>
+
+        <a class="resource-box" href="https://finance.yahoo.com/" target="_blank">
+            <h4>Yahoo Finance</h4>
+            <p>Stock quotes, charts, and market news.</p>
+        </a>
+
+        <a class="resource-box" href="https://www.sec.gov/edgar.shtml" target="_blank">
+            <h4>SEC EDGAR</h4>
+            <p>Company filings, financial statements, IPO info.</p>
+        </a>
+
+        <a class="resource-box" href="https://www.cftc.gov/" target="_blank">
+            <h4>CFTC</h4>
+            <p>Futures, options, commodity market regulation and data.</p>
+        </a>
+
+    </div>
+</section>
+
     
     <!-- FOOTER -->
     <div class="footer"> 

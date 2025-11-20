@@ -1,14 +1,14 @@
 /* Add CSS styles for your web site here and use them in index.html. */
 :root {
   /* DEFAULT: Dark Mode */
-  --bg-color: #112D28;
-  --secondarybg-color: #467c58;
-  --accent: #67c673;
-  --text-color: #ffffff;
+  --bg-color: #112d28;
+--secondarybg-color: #2f8a4e;
+--accent: #67c673;
+--text-color: #ffffff;
   
 
   /* Light Mode */ 
-  --bg-color-dark-mode: #6fac5b; 
+  --bg-color-dark-mode: #6dad58; 
   --text-color-dark-mode: #fff;
 
   /* Accent Colors */
@@ -30,11 +30,37 @@ width: auto;
 }
 
 /* ===== Building out the Navigations Bar ===== */
-
 /* Navigation Bar */
 .nav {
 margin: 0;
 padding: 0;
+}
+
+/* Dark mode nav boxes (already have this, keep it) */
+.navigation nav a {
+display: inline-block;
+background: rgba(0, 0, 0, 0.25);
+color: var(--text-color);
+padding: 6px 14px;
+border-radius: 10px;
+margin-right: 8px;
+border: 1px solid rgba(255,255,255,0.18);
+font-weight: 600;
+font-size: 0.9rem;
+text-decoration: none;
+transition: background 0.25s ease, transform 0.18s ease, box-shadow 0.22s ease;
+}
+
+.navigation nav a:hover {
+background: rgba(0, 0, 0, 0.45);
+transform: translateY(-2px);
+box-shadow: 0 3px 12px rgba(0,0,0,0.45);
+}
+
+/* Optional: Highlight active link when clicked (CSS-only temp state) */
+.navigation nav a:active {
+transform: translateY(0);
+background: rgba(20, 20, 20, 0.6);
 }
 
 /* Responsive Navigation Bar using Flexbox */
@@ -53,6 +79,32 @@ align-items: center;
 padding: 10px 20px;
 }
 
+/* Theme toggle button in navbar */
+.theme-toggle {
+margin-left: auto;
+padding: 6px 14px;
+border-radius: 999px;
+border: 1px solid rgba(255,255,255,0.6);
+background: linear-gradient(135deg, #1fe578cf, #0fbf98);
+color: #1884b6;
+font-size: 0.9rem;
+font-weight: 600;
+cursor: pointer;
+transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+}
+
+.theme-toggle:hover {
+transform: translateY(-1px);
+box-shadow: 0 4px 14px rgba(0,0,0,0.45);
+background: linear-gradient(135deg, #52ff9c, #1fd1b0);
+}
+
+
+
+
+
+
+
 /* Create site background colors */
 body {
 background-color: var(--bg-color);
@@ -61,6 +113,13 @@ font-size: 16px;
 margin: 80px 20px 60px;
 color: var(--text-color);
 font-family: Tahoma, sans-serif; 
+}
+
+body.light-theme {
+--bg-color: #f4fff8;          /* light background */
+--secondarybg-color: #78b88d; /* light panel version of #467c58 */
+--accent: #1d6b3a;            /* deeper green accent */
+--text-color: #041014;        /* dark text */
 }
 
 /* Updating h1- style */
@@ -179,26 +238,36 @@ color: #cccccc;
 }
 }
 
-/* ==== Snapshot + Video titles row layout ==== */
+/* ==== Creating a vertical split for Snapshot + Video layout ==== */
 .snapshot-header-row {
 display: flex;
-justify-content: center;
+justify-content: flex-end;
 gap: 24px;
 margin-top: 8px;
 margin-bottom: 8px;
 }
 
-.snapshot-header-row h3 {
-flex: 1;
+/* Left title: same width as snapshot-left (flex: 3) */
+.snapshot-header-left {
+flex: 3;
+min-width: 0;
 text-align: center;   
+}
+
+/* Right title: same width as snapshot-right (flex: 0 0 420px) */
+.snapshot-header-right {
+flex: 0 0 420px;
+max-width: 480px;
+text-align: center;    
 }
 
 /* ===== Snapshot + Video layout ===== */
 .snapshot-section {
-display:contents;
+display: flex; 
 gap: 24px;
 align-items: flex-start;
 margin-bottom: 32px;
+width: 100%;
 }
 
 /* Left side: 3x2 grid of cards */
@@ -215,7 +284,7 @@ gap: 16px;
 
 /* Snapshot cards */
 .snapshot-card {
-background: var(--secondarybg-color);
+background:#385c4b;
 padding: 20px;
 border-radius: 10px;
 box-shadow: 0 4px 10px rgba(0,0,0,0.25);
@@ -224,8 +293,7 @@ flex-direction: column;
 justify-content: space-between;
 }
 
-/* Right side: video column */
-/* Keep video a good size and stop it from shrinking tiny */
+/* Right side: video column -  Keep video a good size and stop it from shrinking tiny */
 .snapshot-right {
 flex: 0 0 420px;       
 max-width: 480px;
@@ -234,7 +302,7 @@ max-width: 480px;
 .video-wrapper {
 position: relative;
 width: 100%;
-padding-top: 60%;   
+padding-top: 56.25%;   
 border-radius: 12px;
 overflow: hidden;
 box-shadow: 0 4px 18px rgba(0, 0, 0, 0.45);
@@ -243,8 +311,7 @@ background: #000;
 
 .video-wrapper iframe {
 position: absolute;
-top: 0;
-left: 0;
+inset: 0;
 width: 100%;
 height: 100%;
 border: 0;
@@ -348,8 +415,344 @@ opacity: 0.9;
   border-radius: 15px;
 }
 
+/* ==== Creating the Event Section Layout ==== */
+/* FIRST ROW: Logo + Intro */
+.event-top-row {
+display: flex;
+gap: 30px;
+align-items: center;
+margin-bottom: 30px;
+}
+
+/* Logo box */
+.event-logo-box {
+flex: 0 0 260px;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.event-logo {
+width: 100%;
+max-width: 260px;
+border-radius: 10px;
+}
+
+/* Intro paragraph box */
+.event-intro-box {
+flex: 1;
+background: var(--secondarybg-color);
+padding: 20px;
+border-radius: 12px;
+box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+}
+
+.event-intro-box h3 {
+text-align: left;
+color: #4dff5c;
+}
+
+.event-intro-box p {
+font-size: 18px;
+line-height: 1.5;
+}
+/* ROW: Countdown + What to Expect side by side */
+.event-bottom-row {
+display: flex;
+gap: 24px;
+align-items: flex-start;
+margin-top: 24px;
+}
+
+/* Countdown Box */
+.countdown-box {
+flex: 0 0 360px;
+background: var(--secondarybg-color);
+border-radius: 12px;
+padding: 20px;
+box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+}
+
+.countdown-box h4 {
+text-align: center;
+margin-bottom: 10px;
+color: #fdfdfd;
+font-weight: 700;
+font-size: 22px;
+}
+
+/* Make the timer actually use flex */
+.countdown-timer {
+display: flex;
+justify-content: center;
+gap: 24px;
+}
+
+.countdown-timer span {
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+.countdown-timer strong {
+font-size: 26px;
+color: #77f582;
+}
+
+.countdown-timer small {
+font-size: 12px;
+opacity: 0.8;
+}
+
+/* What to Expect Box */
+.expect-box {
+flex: 1;
+background: var(--secondarybg-color);
+border-radius: 12px;
+padding: 20px;
+box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+}
+
+.expect-box h4 {
+color: #ffffff;
+margin-bottom: 8px;
+font-size: 20px;
+}
+
+.event-bottom-image img {
+max-width: 600px;
+border-radius: 12px;
+box-shadow: 0 4px 14px rgba(0,0,0,0.35);
+}
+
+/* ===== Feature & Reflection Sections (Card Stack) ===== */
+.feature-reflect-wrapper {
+display: flex;
+gap: 30px;
+margin-top: 40px;
+}
+
+/* Left takes more space */
+.featured-section {
+flex: 1.4;
+}
+
+/* Right takes less space */
+.reflections-section {
+flex: 1;
+}
+
+/* Consistent card styling */
+.featured-card, .reflection-card {
+background: rgba(99, 253, 145, 0.295);
+border-radius: 16px;
+padding: 24px;
+margin-top: 16px;
+box-shadow: 0 4px 16px rgba(0,0,0,0.35);
+}
+
+.featured-card h3, .reflection-card h3 {
+text-align: center;
+font-size: 24px;
+color: #77ef5c;
+margin-bottom: 6px;
+}
+
+.featured-card p,
+.reflection-card p {
+font-size: 18px;
+margin-bottom: 12px;
+}
+
+.featured-card a, .reflection-card a {
+font-size: 18px;
+font-weight: 600;
+color: #71beb6;
+text-decoration: none;
+}
+
+.featured-card a:hover, .reflection-card a:hover {
+color: #86b78f;
+}
+
+/* ===== RSVP SECTION UNDER COUNTDOWN ===== */
+.event-rsvp-section {
+display: flex;
+gap: 30px;
+margin-top: 32px;
+align-items: flex-start;
+}
+
+/* LEFT block: description + form */
+.rsvp-left {
+flex: 1;
+background: var(--secondarybg-color);
+padding: 20px 22px;
+border-radius: 14px;
+box-shadow: 0 4px 14px rgba(0,0,0,0.28);
+}
+
+.rsvp-left h3 {
+margin-bottom: 8px;
+color: #4dff5c;
+text-align: left;
+}
+
+.rsvp-left p {
+font-size: 16px;
+margin-bottom: 14px;
+}
+
+/* Form rows */
+.form-row {
+display: flex;
+flex-direction: column;
+margin-bottom: 12px;
+}
+
+.form-row label {
+font-size: 14px;
+margin-bottom: 4px;
+}
+
+.form-row input,
+.form-row textarea {
+padding: 8px 10px;
+border-radius: 8px;
+border: 1px solid rgba(255,255,255,0.4);
+background: rgba(0,0,0,0.25);
+color: var(--text-color);
+font-size: 14px;
+outline: none;
+}
+
+.form-row input::placeholder,
+.form-row textarea::placeholder {
+opacity: 0.7;
+font-size: 13px;
+}
+
+/* Error state */
+.form-row.invalid input,
+.form-row.invalid textarea {
+border-color: var(--error-color-border);
+background: rgba(248,187,208,0.25);
+}
+
+.form-row .error-message {
+margin-top: 4px;
+font-size: 12px;
+color: var(--error-color);
+min-height: 14px;
+}
+
+/* Submit button */
+.rsvp-submit-btn {
+margin-top: 8px;
+padding: 8px 18px;
+border-radius: 999px;
+border: none;
+background: #0b0f14;
+color: #ffffff;
+font-weight: 600;
+cursor: pointer;
+transition: transform 0.18s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.rsvp-submit-btn:hover {
+transform: translateY(-1px);
+box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+background: #151b23;
+}
+
+/* RIGHT block: RSVP list */
+.rsvp-right {
+flex: 0 0 320px;
+background: var(--secondarybg-color);
+padding: 20px;
+border-radius: 14px;
+box-shadow: 0 4px 14px rgba(0,0,0,0.28);
+}
+
+.rsvp-right h3 {
+margin-bottom: 10px;
+text-align: left;
+color: #ffffff;
+}
+
+.rsvp-list {
+list-style: none;
+margin: 0;
+padding: 0;
+max-height: 260px;
+overflow-y: auto;
+}
+
+.rsvp-list li {
+padding: 8px 10px;
+border-radius: 8px;
+margin-bottom: 6px;
+font-size: 14px;
+background: rgba(0,0,0,0.28);
+}
+
+.rsvp-list li span {
+display: block;
+font-size: 12px;
+opacity: 0.82;
+}
+
+.rsvp-empty {
+opacity: 0.7;
+font-style: italic;
+}
 
 
+
+
+
+/* ======== RESOURCES GRID ======== */
+.resources-section {
+margin-top: 50px;
+}
+
+.resources-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+gap: 22px;
+margin-top: 20px;
+}
+
+/* Each link box */
+.resource-box {
+display: block;
+background: rgba(99, 253, 145, 0.25);
+border-radius: 14px;
+padding: 18px 20px;
+text-decoration: none;
+color: var(--text-color);
+border: 1px solid rgba(255, 255, 255, 0.1);
+transition: all 0.25s ease;
+box-shadow: 0 3px 12px rgba(0,0,0,0.25);
+}
+
+.resource-box h4 {
+margin-bottom: 6px;
+color: #6dff6d; 
+font-size: 20px;
+}
+
+.resource-box p {
+font-size: 15px;
+opacity: 0.88;
+}
+
+/* Hover Animation */
+.resource-box:hover {
+transform: translateY(-4px);
+box-shadow: 0 6px 20px rgba(0,0,0,0.45);
+border-color: #ffffff;
+}
 
 /* ==== Footer ==== */
 .footer {
